@@ -825,3 +825,107 @@ Processing by Devise::RegistrationsController#new as HTML
   Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
   Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (5.0ms)
 Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-01 23:32:08 +0100
+Processing by DevelopersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-01 23:32:08 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 37ms (Views: 29.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-01 23:32:09 +0100
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-01 23:32:09 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-01 23:32:09 +0100
+Processing by DevelopersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-01-01 23:32:09 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-01 23:32:13 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  Rendered developers/index.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 38ms (Views: 31.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-01 23:32:14 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered collection (0.0ms)
+  Rendered projects/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-01 23:32:18 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered collection (0.0ms)
+  Rendered projects/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-01 23:32:19 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  Rendered developers/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/developers/2" for ::1 at 2016-01-01 23:32:21 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered developers/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-01 23:32:23 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered collection (0.0ms)
+  Rendered projects/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-01 23:32:23 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  Rendered developers/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.8ms)
