@@ -7,12 +7,12 @@ default: &default
 development:
   <<: *default
   database: recruitment_task_dev
-  username: test
-  password: test
+  username: user
+  password: password
 
 test:
   <<: *default
   database: recruitment_task_test
-  username: test
-  password: test
+  username: user
+  password: password
 
