@@ -8,4 +8,9 @@
   Description
   = project.description
   %br/
+  = link_to "Vote", upvote_project_path(project), method: :put
+  %br/
+  = link_to "Unvote", unvote_project_path(project), method: :put
+  %br/
   Votes:
+  = project.votes_for.size

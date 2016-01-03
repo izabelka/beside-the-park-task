@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
+  before_action :upvote, except: :index
 
   def index
     @projects = Project.all
@@ -21,6 +22,18 @@ class ProjectsController < ApplicationController
       flash[:danger] = 'Project could not be saved'
       render :new
     end
+  end
+  
+  def upvote
+    @project = Project.find(params[:id])
+    @project.like_by current_user
+    redirect_to :back
+  end
+  
+  def unvote
+    @project = Project.find(params[:id])
+    @project.dislike_by current_user
+    redirect_to :back
   end
 
   private

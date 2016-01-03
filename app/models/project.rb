@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   belongs_to :developer
+  acts_as_votable
 
   validates :developer, presence: true
   validates :name, presence: true#, uniqueness: true

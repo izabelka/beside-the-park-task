@@ -6,9 +6,15 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :developers, only: [:show, :index, :new, :create] do
     resource :projects, only: [:new, :create]
+    
     # post '/projects' => 'projects#create'
     # get '/projects/new' => 'projects#new'
   end
 
-  resources :projects, only: [:index]
+  resources :projects, only: [:index] do
+    member do
+      put "upvote", to: "projects#upvote"
+      put "unvote", to: "projects#unvote"
+    end
+  end
 end

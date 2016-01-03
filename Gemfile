@@ -15,6 +15,9 @@ gem 'devise'
 gem 'simple_form'
 gem 'haml-rails'
 
+gem 'carrierwave'
+gem 'acts_as_votable'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'byebug'
