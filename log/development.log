@@ -2937,3 +2937,589 @@ Processing by ProjectsController#new as HTML
   [1m[35mDeveloper Load (0.1ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
   Rendered projects/new.html.haml within layouts/application (6.0ms)
 Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 09:24:42 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.4ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (31.3ms)
+Completed 200 OK in 254ms (Views: 212.6ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/developers/1" for ::1 at 2016-01-03 09:24:44 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered developers/show.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 34ms (Views: 29.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/developers/2" for ::1 at 2016-01-03 09:24:49 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  Rendered projects/_project.html.haml (1.3ms)
+  Rendered developers/show.html.haml within layouts/application (11.2ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/developers/2/projects/new" for ::1 at 2016-01-03 09:24:50 +0100
+Processing by ProjectsController#new as HTML
+  Parameters: {"developer_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered projects/new.html.haml within layouts/application (305.2ms)
+Completed 200 OK in 333ms (Views: 329.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/developers/2/projects" for ::1 at 2016-01-03 09:25:02 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0Ffn/7HsW1MBjjp8OJfZesmKB9+QkHTjQ5TN9oucSzJNVs1Wmuj8HmM9o/bmFVSy+5+S7oiozp6k5bVAH1kKEA==", "project"=>{"name"=>"My second project", "description"=>"the best project ever"}, "commit"=>"save", "developer_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.3ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mProject Exists (0.4ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'My second project' AND "projects"."developer_id" = 2) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My second project"], ["description", "the best project ever"], ["developer_id", 2], ["created_at", "2016-01-03 08:25:02.086538"], ["updated_at", "2016-01-03 08:25:02.086538"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 14ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:25:02 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (1.7ms)
+  Rendered projects/index.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 09:25:05 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (10.9ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/developers/2" for ::1 at 2016-01-03 09:25:11 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  Rendered projects/_project.html.haml (0.1ms)
+  Rendered developers/show.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 09:25:16 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:25:19 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/_project.html.haml (0.2ms)
+  Rendered projects/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 09:25:45 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.4ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:25:46 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (0.3ms)
+  Rendered projects/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:27:09 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (17.0ms)
+  Rendered projects/index.html.haml within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `developer' for #<#<Class:0x007fa09aabf968>:0x007fa0a2aa87b0>):
+    1: .project
+    2:   Developer:
+    3:   = developer.full_name
+    4:   %br/
+    5:   Name:
+    6:   = project.name
+  app/views/projects/_project.html.haml:3:in `_app_views_projects__project_html_haml___3382051670003225346_70163950327100'
+  app/views/projects/index.html.haml:3:in `_app_views_projects_index_html_haml__1779499809973028885_70163894700760'
+
+
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.9ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.9ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (96.9ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:27:19 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (3.1ms)
+  Rendered projects/index.html.haml within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+    1: .project
+    2:   Developer:
+    3:   = @developer.full_name
+    4:   %br/
+    5:   Name:
+    6:   = project.name
+  app/views/projects/_project.html.haml:3:in `_app_views_projects__project_html_haml___3382051670003225346_70163914203160'
+  app/views/projects/index.html.haml:3:in `_app_views_projects_index_html_haml__1779499809973028885_70163894700760'
+
+
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.2ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.2ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (97.3ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:28:03 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (1.8ms)
+  Rendered projects/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-03 09:28:03 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-03 09:28:03 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-03 09:28:03 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-03 09:28:03 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-03 09:28:03 +0100
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:29:57 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (3.6ms)
+  Rendered projects/index.html.haml within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+    1: .project
+    2:   Developer:
+    3:   = @developer.full_name
+    4:   %br/
+    5:   Name:
+    6:   = project.name
+  app/views/projects/_project.html.haml:3:in `_app_views_projects__project_html_haml___3382051670003225346_70163896354160'
+  app/views/projects/index.html.haml:3:in `_app_views_projects_index_html_haml__1779499809973028885_70163894700760'
+
+
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.2ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (91.6ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:30:11 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (3.5ms)
+  Rendered projects/index.html.haml within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: .project
+    2:   Developer:
+    3:   = @developer.first_name
+    4:   %br/
+    5:   Name:
+    6:   = project.name
+  app/views/projects/_project.html.haml:3:in `_app_views_projects__project_html_haml___3382051670003225346_70163912551140'
+  app/views/projects/index.html.haml:3:in `_app_views_projects_index_html_haml__1779499809973028885_70163894700760'
+
+
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (41.2ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (91.5ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:33:28 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (2.9ms)
+  Rendered projects/index.html.haml within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: .project
+    2:   %h2 All developers
+    3:   - @developers.each do |developer|
+    4:     .developer
+    5:       = link_to developer.full_name, developer_path(developer)
+    6:       %br/
+  app/views/projects/_project.html.haml:3:in `_app_views_projects__project_html_haml___3382051670003225346_70163887198080'
+  app/views/projects/index.html.haml:3:in `_app_views_projects_index_html_haml__1779499809973028885_70163894700760'
+
+
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.0ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.0ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.2ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:34:09 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (2.7ms)
+  Rendered projects/index.html.haml within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: .project
+    2:   Developer:
+    3:   = @developer.first_name
+    4:   %br/
+    5:   Name:
+    6:   = project.name
+  app/views/projects/_project.html.haml:3:in `_app_views_projects__project_html_haml___3382051670003225346_70163965925720'
+  app/views/projects/index.html.haml:3:in `_app_views_projects_index_html_haml__1779499809973028885_70163894700760'
+
+
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.2ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (41.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.7ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:34:30 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/_project.html.haml (3.3ms)
+  Rendered projects/index.html.haml within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: Developer:
+    2: = @developer.first_name
+    3: .project
+    4:   %br/
+    5:   Name:
+  app/views/projects/_project.html.haml:2:in `_app_views_projects__project_html_haml___3382051670003225346_70163884087220'
+  app/views/projects/index.html.haml:3:in `_app_views_projects_index_html_haml__1779499809973028885_70163894700760'
+
+
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.9ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.4ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/izabelka/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.7ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:58:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mDeveloper Load (0.3ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.haml (20.6ms)
+  Rendered projects/index.html.haml within layouts/application (32.2ms)
+Completed 200 OK in 257ms (Views: 213.0ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-03 09:58:04 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-03 09:58:04 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-03 09:58:04 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-03 09:58:04 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-03 09:58:04 +0100
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:58:23 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/_project.html.haml (2.3ms)
+  Rendered projects/index.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-03 09:58:23 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-03 09:58:23 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-03 09:58:23 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-03 09:58:23 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-03 09:58:23 +0100
+
+
+Started GET "/projects" for ::1 at 2016-01-03 09:58:40 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.haml (7.7ms)
+  Rendered projects/index.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-03 09:58:40 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-03 09:58:40 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-03 09:58:40 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-03 09:58:40 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-03 09:58:40 +0100
+
+
+Started GET "/developers" for ::1 at 2016-01-03 09:58:48 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (20.4ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/developers/2" for ::1 at 2016-01-03 09:58:50 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  Rendered projects/_project.html.haml (2.1ms)
+  Rendered developers/show.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 10:00:32 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 10:00:33 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/developers/3" for ::1 at 2016-01-03 10:01:49 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  Rendered collection (0.0ms)
+  Rendered developers/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/developers/3/projects/new" for ::1 at 2016-01-03 10:01:51 +0100
+Processing by ProjectsController#new as HTML
+  Parameters: {"developer_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered projects/new.html.haml within layouts/application (294.1ms)
+Completed 200 OK in 324ms (Views: 321.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/developers/3/projects" for ::1 at 2016-01-03 10:01:58 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R2h+9XWemgdiyud6yyMbGXAHWhgMy6KcO+DxrPoGLITaaVRcXpo9SgB5fvAVoZbRQhLPKRTzGOHckYkabsNtpg==", "project"=>{"name"=>"fsdg", "description"=>"gggdg gd gd  ty   i f g d d "}, "commit"=>"save", "developer_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'fsdg' AND "projects"."developer_id" = 3) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "fsdg"], ["description", "gggdg gd gd  ty   i f g d d "], ["developer_id", 3], ["created_at", "2016-01-03 09:01:58.352168"], ["updated_at", "2016-01-03 09:01:58.352168"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 14ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 10:01:58 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered projects/_project.html.haml (3.0ms)
+  Rendered projects/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 10:02:04 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 47ms (Views: 43.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-03 10:02:50 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered projects/_project.html.haml (2.3ms)
+  Rendered projects/index.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.8ms)

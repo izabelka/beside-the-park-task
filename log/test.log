@@ -4566,3 +4566,135 @@ Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fletcher@heathcoteyost.com' LIMIT 1[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by DevelopersController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+  Rendered text template (0.0ms)
+  [1m[36m (6.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'craig_raynor@reichel.biz' LIMIT 1
+  [1m[36mSQL (5.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craig_raynor@reichel.biz"], ["encrypted_password", "$2a$04$PSD59gjpXYSLD5ke76A4VuqJ9hVKEiIZLoOXdJm3frQkOp7QVPJrW"], ["created_at", "2016-01-03 08:36:02.457266"], ["updated_at", "2016-01-03 08:36:02.457266"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.6ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Abner"], ["last_name", "Kirlin"], ["created_at", "2016-01-03 08:36:02.484471"], ["updated_at", "2016-01-03 08:36:02.484471"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Lucinda"], ["last_name", "Bradtke"], ["created_at", "2016-01-03 08:36:02.493730"], ["updated_at", "2016-01-03 08:36:02.493730"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Anastacio"], ["last_name", "Marquardt"], ["created_at", "2016-01-03 08:36:02.496057"], ["updated_at", "2016-01-03 08:36:02.496057"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Alden"], ["last_name", "Emmerich"], ["created_at", "2016-01-03 08:36:02.498111"], ["updated_at", "2016-01-03 08:36:02.498111"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Cory"], ["last_name", "Abbott"], ["created_at", "2016-01-03 08:36:02.499789"], ["updated_at", "2016-01-03 08:36:02.499789"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DevelopersController#index as HTML
+  Rendered developers/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Fernando"], ["last_name", "Becker"], ["created_at", "2016-01-03 08:36:02.514637"], ["updated_at", "2016-01-03 08:36:02.514637"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Facere ut tempora maiores.' AND "projects"."developer_id" = 50) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Facere ut tempora maiores."], ["description", "Inventore ab ut. Et ducimus rem dicta occaecati dolore quia. Quo non in nemo voluptatem incidunt et velit. Sed temporibus dicta aut aliquid."], ["developer_id", 50], ["created_at", "2016-01-03 08:36:02.527240"], ["updated_at", "2016-01-03 08:36:02.527240"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Cum corrupti ut.' AND "projects"."developer_id" = 50) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cum corrupti ut."], ["description", "Est laboriosam optio debitis fugiat. Qui quas mollitia. Neque id illum."], ["developer_id", 50], ["created_at", "2016-01-03 08:36:02.531655"], ["updated_at", "2016-01-03 08:36:02.531655"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Libero vero.' AND "projects"."developer_id" = 50) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Libero vero."], ["description", "Error quod et dicta quo dolor. Accusamus quae laborum est quis hic soluta distinctio. Unde illo autem consequatur et quis fuga."], ["developer_id", 50], ["created_at", "2016-01-03 08:36:02.534543"], ["updated_at", "2016-01-03 08:36:02.534543"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Voluptatem odio eveniet.' AND "projects"."developer_id" = 50) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Voluptatem odio eveniet."], ["description", "Assumenda voluptates consectetur voluptas ut praesentium. Consequatur quod illum. Et numquam sed. Odit fugiat explicabo id."], ["developer_id", 50], ["created_at", "2016-01-03 08:36:02.537271"], ["updated_at", "2016-01-03 08:36:02.537271"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Pariatur dolores.' AND "projects"."developer_id" = 50) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pariatur dolores."], ["description", "Qui autem in delectus rem dolores est consequuntur. Consequatur dolorem quae est fugit in. Reprehenderit ea dicta. Soluta et labore. Laudantium rem quia sunt."], ["developer_id", 50], ["created_at", "2016-01-03 08:36:02.540220"], ["updated_at", "2016-01-03 08:36:02.540220"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 50]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Aubrey"], ["last_name", "Gislason"], ["created_at", "2016-01-03 08:36:02.552381"], ["updated_at", "2016-01-03 08:36:02.552381"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Qui soluta sunt impedit illum nisi.' AND "projects"."developer_id" = 51) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Qui soluta sunt impedit illum nisi."], ["description", "Id earum quam atque cupiditate. In quas enim aut qui enim. Voluptas expedita et minus explicabo ut."], ["developer_id", 51], ["created_at", "2016-01-03 08:36:02.555517"], ["updated_at", "2016-01-03 08:36:02.555517"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Autem consequatur.' AND "projects"."developer_id" = 51) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Autem consequatur."], ["description", "Aut similique qui animi et. Velit excepturi quisquam vero ea consequuntur rerum. Enim odio illo iste quo. Consectetur id ut iusto omnis."], ["developer_id", 51], ["created_at", "2016-01-03 08:36:02.558433"], ["updated_at", "2016-01-03 08:36:02.558433"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Est velit.' AND "projects"."developer_id" = 51) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Est velit."], ["description", "Quo nihil ducimus eligendi sit nisi. Velit architecto consequatur qui perspiciatis. Est vitae culpa eos molestias. Et non dolores. Error deserunt ut doloribus."], ["developer_id", 51], ["created_at", "2016-01-03 08:36:02.561138"], ["updated_at", "2016-01-03 08:36:02.561138"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Ut repudiandae dolor sequi labore.' AND "projects"."developer_id" = 51) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ut repudiandae dolor sequi labore."], ["description", "Illo et eos ipsum aliquam est. Quisquam molestias rerum vel ut sit excepturi hic. Vero eveniet doloribus et sint. Autem quisquam rerum sint."], ["developer_id", 51], ["created_at", "2016-01-03 08:36:02.563665"], ["updated_at", "2016-01-03 08:36:02.563665"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Sint consectetur cumque consequatur blanditiis quia.' AND "projects"."developer_id" = 51) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sint consectetur cumque consequatur blanditiis quia."], ["description", "Aliquam eius debitis optio. Velit totam debitis aliquid magnam illo. Similique ut est. Nisi non rerum. Eum quis laudantium ea."], ["developer_id", 51], ["created_at", "2016-01-03 08:36:02.566299"], ["updated_at", "2016-01-03 08:36:02.566299"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "developers" WHERE "developers"."id" = $1[0m  [["id", 51]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Non aut aut doloribus in ab.' AND "projects"."developer_id" IS NULL) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Megane"], ["last_name", "Rolfson"], ["created_at", "2016-01-03 08:36:02.577009"], ["updated_at", "2016-01-03 08:36:02.577009"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = ' ' AND "projects"."developer_id" = 52) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Xzavier"], ["last_name", "Predovic"], ["created_at", "2016-01-03 08:36:02.581508"], ["updated_at", "2016-01-03 08:36:02.581508"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Ea ut quis.' AND "projects"."developer_id" = 53) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Oswaldo"], ["last_name", "Jaskolski"], ["created_at", "2016-01-03 08:36:02.585853"], ["updated_at", "2016-01-03 08:36:02.585853"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Joy"], ["last_name", "O'Connell"], ["created_at", "2016-01-03 08:36:02.587505"], ["updated_at", "2016-01-03 08:36:02.587505"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProject Exists (0.4ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Architecto aut sed esse deleniti.' AND "projects"."developer_id" = 54) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Architecto aut sed esse deleniti."], ["description", "Et iure praesentium asperiores. Sit est aut consequatur. Aliquid eveniet quae quisquam aut aut reprehenderit."], ["developer_id", 54], ["created_at", "2016-01-03 08:36:02.590540"], ["updated_at", "2016-01-03 08:36:02.590540"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Architecto aut sed esse deleniti.' AND "projects"."developer_id" = 54) LIMIT 1[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Architecto aut sed esse deleniti.' AND "projects"."developer_id" = 55) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ewald.veum@nolan.biz' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'clemmie.bednar@osinski.info' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'bradford@robelschuppe.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "bradford@robelschuppe.com"], ["encrypted_password", "$2a$04$qcUiy3mS6/j0VRfgYh.G7elyk62WQ1vLnAeUqZf2FOLguGMHiJyAS"], ["created_at", "2016-01-03 08:36:02.610324"], ["updated_at", "2016-01-03 08:36:02.610324"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'bradford@robelschuppe.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
