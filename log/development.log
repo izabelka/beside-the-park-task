@@ -1850,3 +1850,87 @@ Processing by DevelopersController#index as HTML
   [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
   Rendered developers/index.html.haml within layouts/application (5.5ms)
 Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 08:51:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.5ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (49.6ms)
+Completed 200 OK in 363ms (Views: 301.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/developers/1" for ::1 at 2016-01-03 08:51:51 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.3ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered developers/show.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 53ms (Views: 44.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/developers/1" for ::1 at 2016-01-03 08:52:16 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered developers/show.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 55.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-03 08:52:16 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-03 08:52:16 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-03 08:52:16 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-03 08:52:16 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-03 08:52:16 +0100
+
+
+Started GET "/projects" for ::1 at 2016-01-03 08:52:27 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered collection (0.0ms)
+  Rendered projects/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 75ms (Views: 71.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-03 08:52:28 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.5ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 5]]
+  Rendered developers/index.html.haml within layouts/application (13.1ms)
+Completed 200 OK in 66ms (Views: 59.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/developers/2" for ::1 at 2016-01-03 08:52:34 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.5ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered developers/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 60ms (Views: 54.5ms | ActiveRecord: 1.2ms)
