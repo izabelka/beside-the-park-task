@@ -3,3 +3,7 @@
 .projects
   %h2 Projects
   = render @developer.projects
+  
+  .section
+    = link_to 'Add project', new_developer_projects_path(:developer_id => @developer.id)
+    %br/
