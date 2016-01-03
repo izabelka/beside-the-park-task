@@ -12,5 +12,7 @@
       %ul
         %li= link_to 'Developers', developers_path
         %li= link_to 'Projects', projects_path
+        - flash.each do |type, message|
+          = message
 
     = yield
