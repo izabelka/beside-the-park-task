@@ -22146,3 +22146,759 @@ Processing by DevelopersController#index as HTML
   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
   Rendered developers/index.html.haml within layouts/application (36.5ms)
 Completed 200 OK in 550ms (Views: 514.9ms | ActiveRecord: 6.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "admin@admin.com"], ["encrypted_password", "$2a$10$eYx.HVaj2SaLNQVr8bWBsuH5iqgLgPen.Yt5WYrPpRy.MZ6y.6MzK"], ["created_at", "2016-01-04 04:25:09.619663"], ["updated_at", "2016-01-04 04:25:09.619663"]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Myron"], ["last_name", "Dickens"], ["created_at", "2016-01-04 04:25:09.875842"], ["updated_at", "2016-01-04 04:25:09.875842"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Garfield"], ["last_name", "Cole"], ["created_at", "2016-01-04 04:25:09.879659"], ["updated_at", "2016-01-04 04:25:09.879659"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Guadalupe"], ["last_name", "Schulist"], ["created_at", "2016-01-04 04:25:09.882287"], ["updated_at", "2016-01-04 04:25:09.882287"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Reese"], ["last_name", "Gutkowski"], ["created_at", "2016-01-04 04:25:09.884246"], ["updated_at", "2016-01-04 04:25:09.884246"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Miles"], ["last_name", "McCullough"], ["created_at", "2016-01-04 04:25:09.886159"], ["updated_at", "2016-01-04 04:25:09.886159"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mProject Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Voluptatem libero velit voluptas.' AND "projects"."developer_id" = 10) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Voluptatem libero velit voluptas."], ["description", "Praesentium totam reiciendis. Nostrum rerum fuga adipisci assumenda possimus quo et. Nihil corrupti accusamus amet temporibus sed. Omnis adipisci distinctio commodi necessitatibus enim."], ["developer_id", 10], ["created_at", "2016-01-04 04:25:09.911105"], ["updated_at", "2016-01-04 04:25:09.911105"]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Voluptas repudiandae nihil asperiores velit ut.' AND "projects"."developer_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Voluptas repudiandae nihil asperiores velit ut."], ["description", "Qui unde eos. Laboriosam quam soluta quia pariatur maiores rem quo. Occaecati est non repellendus ab unde delectus consectetur."], ["developer_id", 2], ["created_at", "2016-01-04 04:25:09.919736"], ["updated_at", "2016-01-04 04:25:09.919736"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Ea reiciendis porro.' AND "projects"."developer_id" = 8) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ea reiciendis porro."], ["description", "Repellendus dolorem alias sapiente. Fugiat minima dolor rem adipisci praesentium. Quia doloremque debitis dolores tempore vel. Voluptatum distinctio molestias nobis voluptas. Laborum asperiores voluptas magnam."], ["developer_id", 8], ["created_at", "2016-01-04 04:25:09.923108"], ["updated_at", "2016-01-04 04:25:09.923108"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Nostrum minus.' AND "projects"."developer_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Nostrum minus."], ["description", "Ut magnam dolores quo sed ratione. Sit autem voluptates at ipsam quo sit quo. Atque est error similique."], ["developer_id", 3], ["created_at", "2016-01-04 04:25:09.926164"], ["updated_at", "2016-01-04 04:25:09.926164"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Accusamus omnis veritatis corporis consequatur.' AND "projects"."developer_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Accusamus omnis veritatis corporis consequatur."], ["description", "Quidem ad recusandae. Et iusto dolorum ad dolor. Praesentium et quidem at ipsum. Eius ratione molestias voluptas aut facilis. Nostrum rerum error consequatur."], ["developer_id", 3], ["created_at", "2016-01-04 04:25:09.929143"], ["updated_at", "2016-01-04 04:25:09.929143"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Labore sed.' AND "projects"."developer_id" = 8) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Labore sed."], ["description", "Aperiam rerum dolorem. Non necessitatibus dicta distinctio veniam tempore nihil. Aut error nisi consequuntur. Ut qui occaecati magni. Ipsa aut odit cumque."], ["developer_id", 8], ["created_at", "2016-01-04 04:25:09.932078"], ["updated_at", "2016-01-04 04:25:09.932078"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Placeat autem maxime recusandae voluptatibus quo molestias.' AND "projects"."developer_id" = 10) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Placeat autem maxime recusandae voluptatibus quo molestias."], ["description", "Enim earum accusantium. Sed vero nihil ut. Et nisi sed praesentium dolorem. Recusandae qui pariatur molestiae tempore."], ["developer_id", 10], ["created_at", "2016-01-04 04:25:09.935814"], ["updated_at", "2016-01-04 04:25:09.935814"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Temporibus rerum.' AND "projects"."developer_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Temporibus rerum."], ["description", "Temporibus quisquam similique in blanditiis. Doloribus veritatis atque numquam. Omnis dolorem non ut autem hic error id."], ["developer_id", 3], ["created_at", "2016-01-04 04:25:09.939320"], ["updated_at", "2016-01-04 04:25:09.939320"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Porro asperiores amet odit.' AND "projects"."developer_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Porro asperiores amet odit."], ["description", "Cumque autem rem deserunt ex omnis ipsam placeat. Eveniet nesciunt nam voluptas sint. Dignissimos labore cum est odit culpa ut. Id fugit omnis magni quia ipsa. Unde accusantium reiciendis molestiae vel fugiat illum."], ["developer_id", 2], ["created_at", "2016-01-04 04:25:09.942547"], ["updated_at", "2016-01-04 04:25:09.942547"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Voluptate qui rem eum.' AND "projects"."developer_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Voluptate qui rem eum."], ["description", "Non harum dolores. Blanditiis cumque quibusdam nulla fugit autem laudantium sed. Tempora alias reiciendis ea."], ["developer_id", 3], ["created_at", "2016-01-04 04:25:09.945552"], ["updated_at", "2016-01-04 04:25:09.945552"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Voluptatem necessitatibus sint sed modi.' AND "projects"."developer_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Voluptatem necessitatibus sint sed modi."], ["description", "Molestiae accusamus fugit placeat est. Earum aliquam rem a sit explicabo. Quidem eaque molestiae quisquam omnis quis."], ["developer_id", 1], ["created_at", "2016-01-04 04:25:09.948736"], ["updated_at", "2016-01-04 04:25:09.948736"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Aut temporibus incidunt est.' AND "projects"."developer_id" = 9) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Aut temporibus incidunt est."], ["description", "Quo consequuntur cumque voluptatem ducimus est omnis et. Quo temporibus omnis accusantium delectus. Dolorum explicabo blanditiis enim."], ["developer_id", 9], ["created_at", "2016-01-04 04:25:09.951659"], ["updated_at", "2016-01-04 04:25:09.951659"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Eaque ad possimus doloremque.' AND "projects"."developer_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Eaque ad possimus doloremque."], ["description", "Dolores quos quaerat voluptates quidem quia eveniet fugit. Enim qui quis velit exercitationem quia repellat a. Qui voluptatem itaque."], ["developer_id", 3], ["created_at", "2016-01-04 04:25:09.954707"], ["updated_at", "2016-01-04 04:25:09.954707"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Aspernatur impedit.' AND "projects"."developer_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Aspernatur impedit."], ["description", "Temporibus quos sapiente eveniet voluptate dolor. Ut debitis ut voluptatem autem voluptatem eaque. Mollitia praesentium et qui."], ["developer_id", 3], ["created_at", "2016-01-04 04:25:09.957668"], ["updated_at", "2016-01-04 04:25:09.957668"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Illo qui.' AND "projects"."developer_id" = 10) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Illo qui."], ["description", "Illo tempora aut impedit sit molestiae esse. Magnam a consequuntur quia. Corporis vero doloremque ipsam hic. Dolorem in nobis omnis sit libero sed est."], ["developer_id", 10], ["created_at", "2016-01-04 04:25:09.960545"], ["updated_at", "2016-01-04 04:25:09.960545"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "languages" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Deserunt sit autem."], ["created_at", "2016-01-04 04:25:09.969603"], ["updated_at", "2016-01-04 04:25:09.969603"]]
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "languages_pkey"
+DETAIL:  Key (id)=(1) already exists.
+: INSERT INTO "languages" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:26:13 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.5ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 7]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 10]]
+  Rendered developers/index.html.haml within layouts/application (44.6ms)
+Completed 200 OK in 660ms (Views: 624.4ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/developers/8" for ::1 at 2016-01-04 05:26:20 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 8]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 9], ["votable_type", "Project"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 12], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (7.0ms)
+  Rendered developers/show.html.haml within layouts/application (20.1ms)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 2.1ms)
+
+
+Started PUT "/projects/9/upvote" for ::1 at 2016-01-04 05:26:24 +0100
+Processing by ProjectsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"vdYM26klx/aQo1hv1lgw5SVmB0nUHz0ftSanI5n4FzTSFzmrsSVqzgLbF34coPgMV+u1uLy2KAqJmNNo/wXmeg==", "id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 9], ["votable_type", "Project"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "votes" ("votable_id", "votable_type", "voter_id", "voter_type", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["votable_id", 9], ["votable_type", "Project"], ["voter_id", 1], ["voter_type", "User"], ["vote_flag", "t"], ["vote_weight", 1], ["created_at", "2016-01-04 04:26:24.572548"], ["updated_at", "2016-01-04 04:26:24.572548"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/developers/8
+Filter chain halted as :upvote rendered or redirected
+Completed 302 Found in 27ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/developers/8" for ::1 at 2016-01-04 05:26:24 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 8]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 9], ["votable_type", "Project"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 12], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (7.5ms)
+  Rendered developers/show.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 1.5ms)
+
+
+Started PUT "/projects/9/unvote" for ::1 at 2016-01-04 05:26:25 +0100
+Processing by ProjectsController#unvote as HTML
+  Parameters: {"authenticity_token"=>"PJTH0MC/57m8QsIy1uT4OCvShbCP39HxEHY1dPHHNKVTVfKg2L9KgS46jSMcHDDRWV83Qed2xOQsyEE/lzrF6w==", "id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 9], ["votable_type", "Project"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.2ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 9], ["votable_type", "Project"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/developers/8
+Filter chain halted as :upvote rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/developers/8" for ::1 at 2016-01-04 05:26:25 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 8]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 9], ["votable_type", "Project"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 12], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (4.3ms)
+  Rendered developers/show.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/projects/12/upvote" for ::1 at 2016-01-04 05:26:26 +0100
+Processing by ProjectsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"qNIIoo+apH/E9fCAF5i4jyX4DIfD9+svpxMZz92ai03HEz3Sl5oJR1aNv5HdYHBmV3W+dqte/jqbrW2Eu2d6Aw==", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 12], ["votable_type", "Project"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "votes" ("votable_id", "votable_type", "voter_id", "voter_type", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["votable_id", 12], ["votable_type", "Project"], ["voter_id", 1], ["voter_type", "User"], ["vote_flag", "t"], ["vote_weight", 1], ["created_at", "2016-01-04 04:26:26.402766"], ["updated_at", "2016-01-04 04:26:26.402766"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/developers/8
+Filter chain halted as :upvote rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/developers/8" for ::1 at 2016-01-04 05:26:26 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 9], ["votable_type", "Project"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 12], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (5.1ms)
+  Rendered developers/show.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/projects/12/unvote" for ::1 at 2016-01-04 05:26:27 +0100
+Processing by ProjectsController#unvote as HTML
+  Parameters: {"authenticity_token"=>"MaBb7ztGDsmkq+B+b5E7gjfCvcdOFO4oJRdnpjbPnNVeYW6fI0aj8TbTr2+lafNrRU8PNia9+z0ZqRPtUDJtmw==", "id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 12], ["votable_type", "Project"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.3ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 12], ["votable_type", "Project"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/developers/8
+Filter chain halted as :upvote rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/developers/8" for ::1 at 2016-01-04 05:26:27 +0100
+Processing by DevelopersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 9], ["votable_type", "Project"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 12], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (2.9ms)
+  Rendered developers/show.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/developers/8/projects/new" for ::1 at 2016-01-04 05:26:28 +0100
+Processing by ProjectsController#new as HTML
+  Parameters: {"developer_id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mLanguage Load (0.4ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered projects/new.html.haml within layouts/application (58.1ms)
+Completed 200 OK in 83ms (Views: 78.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/developers/8/projects" for ::1 at 2016-01-04 05:26:29 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"le9/Q+Xa/f9Q08Wmbmyk/xP/1L08/uO+VfYKSWhqX7r6Lkoz/dpQx8KrireklGwWYXJmTFRX9qtpSH4CDpeu9A==", "project"=>{"name"=>"", "description"=>"", "language_ids"=>[""]}, "commit"=>"save", "developer_id"=>"8"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.1ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 8]]
+Unpermitted parameter: language_ids
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = '' AND "projects"."developer_id" = 8) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered projects/new.html.haml within layouts/application (10.1ms)
+Completed 200 OK in 59ms (Views: 46.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:26:30 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 7]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 10]]
+  Rendered developers/index.html.haml within layouts/application (12.7ms)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-04 05:26:33 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 1], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 2], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 3], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 4], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.1ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 5], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.1ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 6], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.1ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 7], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 8], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 9], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 10], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 11], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 12], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 13], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 14], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 15], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 16], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 17], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.1ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 18], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 19], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 20], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 21], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (47.6ms)
+  Rendered projects/index.html.haml within layouts/application (51.6ms)
+Completed 200 OK in 83ms (Views: 75.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:26:39 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 7]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 10]]
+  Rendered developers/index.html.haml within layouts/application (14.1ms)
+Completed 200 OK in 44ms (Views: 40.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/languages" for ::1 at 2016-01-04 05:26:39 +0100
+Processing by LanguagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/languages/4" for ::1 at 2016-01-04 05:26:41 +0100
+Processing by LanguagesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "participation" ON "projects"."id" = "participation"."project_id" WHERE "participation"."language_id" = $1  [["language_id", 4]]
+  Rendered languages/show.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (2.2ms)[0m  [1mDELETE FROM "languages"[0m
+  [1m[35mDeveloper Load (0.6ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36mSQL (5.4ms)[0m  [1mDELETE FROM "developers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "projects"
+
+
+Started GET "/languages" for ::1 at 2016-01-04 05:29:07 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LanguagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.5ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 540ms (Views: 505.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:29:09 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  Rendered developers/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 78ms (Views: 72.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-04 05:29:10 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered collection (0.0ms)
+  Rendered projects/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 33.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/languages" for ::1 at 2016-01-04 05:29:11 +0100
+Processing by LanguagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-04 05:29:14 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered collection (0.0ms)
+  Rendered projects/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:29:15 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  Rendered developers/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/languages" for ::1 at 2016-01-04 05:29:17 +0100
+Processing by LanguagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-04 05:29:18 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered collection (0.0ms)
+  Rendered projects/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:29:18 +0100
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  Rendered developers/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin1@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "admin1@admin.com"], ["encrypted_password", "$2a$10$5p4QxhupZEbxdfMF0/S4tOz2GkbJgmXwz9Xp7S7T7ghL4oftp9Y/2"], ["created_at", "2016-01-04 04:29:41.407289"], ["updated_at", "2016-01-04 04:29:41.407289"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Waylon"], ["last_name", "Morissette"], ["created_at", "2016-01-04 04:29:41.689296"], ["updated_at", "2016-01-04 04:29:41.689296"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Alana"], ["last_name", "Cronin"], ["created_at", "2016-01-04 04:29:41.692898"], ["updated_at", "2016-01-04 04:29:41.692898"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Caleb"], ["last_name", "Ledner"], ["created_at", "2016-01-04 04:29:41.695979"], ["updated_at", "2016-01-04 04:29:41.695979"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Mabel"], ["last_name", "Corkery"], ["created_at", "2016-01-04 04:29:41.698685"], ["updated_at", "2016-01-04 04:29:41.698685"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "developers" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Grayce"], ["last_name", "Rippin"], ["created_at", "2016-01-04 04:29:41.701189"], ["updated_at", "2016-01-04 04:29:41.701189"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mDeveloper Load (0.3ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Voluptatem animi.' AND "projects"."developer_id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Voluptatem animi."], ["description", "Amet inventore qui beatae sed quos. Qui qui at est soluta doloremque minima ducimus. Aut repellendus cum velit delectus repudiandae. Modi est repudiandae fugiat quis est quaerat. Adipisci fugit inventore voluptas."], ["developer_id", 12], ["created_at", "2016-01-04 04:29:41.730042"], ["updated_at", "2016-01-04 04:29:41.730042"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Sit sit sunt harum veniam omnis.' AND "projects"."developer_id" = 13) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Sit sit sunt harum veniam omnis."], ["description", "Nisi ad cumque quo culpa. Minima et saepe nam sequi cupiditate. Placeat nobis accusantium ipsam aut eos labore. Ut nihil voluptate earum veritatis."], ["developer_id", 13], ["created_at", "2016-01-04 04:29:41.735388"], ["updated_at", "2016-01-04 04:29:41.735388"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Est nobis ipsa facere sunt corporis.' AND "projects"."developer_id" = 14) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Est nobis ipsa facere sunt corporis."], ["description", "Neque et id et. Explicabo voluptate ipsam voluptatem repellendus nulla. Est ducimus optio ad vero laudantium quod. Dolore architecto et est rerum molestias. Id rem cum tempora voluptatum."], ["developer_id", 14], ["created_at", "2016-01-04 04:29:41.738669"], ["updated_at", "2016-01-04 04:29:41.738669"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Ea quis est quos ut.' AND "projects"."developer_id" = 13) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ea quis est quos ut."], ["description", "Earum necessitatibus cum ipsum. Qui ut sint veniam sit fugiat incidunt. Quasi officia et assumenda unde possimus voluptate. Sit mollitia quisquam."], ["developer_id", 13], ["created_at", "2016-01-04 04:29:41.741783"], ["updated_at", "2016-01-04 04:29:41.741783"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Dolorum et in officiis.' AND "projects"."developer_id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dolorum et in officiis."], ["description", "Eveniet fugit incidunt officia dolorem doloribus. Ut assumenda nulla culpa omnis. Totam nobis officia et eius dolor accusantium eaque. Quam voluptates dolor."], ["developer_id", 12], ["created_at", "2016-01-04 04:29:41.745019"], ["updated_at", "2016-01-04 04:29:41.745019"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Minima quisquam ut.' AND "projects"."developer_id" = 13) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Minima quisquam ut."], ["description", "Consequatur ullam qui ut. Ut odit tenetur. Amet ut distinctio et est tempora."], ["developer_id", 13], ["created_at", "2016-01-04 04:29:41.748821"], ["updated_at", "2016-01-04 04:29:41.748821"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Veniam amet.' AND "projects"."developer_id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Veniam amet."], ["description", "Recusandae aliquid id qui perferendis voluptatum aperiam. Cupiditate atque tenetur odit explicabo facere doloremque eos. Sed necessitatibus reiciendis natus quos temporibus sit."], ["developer_id", 12], ["created_at", "2016-01-04 04:29:41.752514"], ["updated_at", "2016-01-04 04:29:41.752514"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Ut voluptas iure illo est assumenda repudiandae.' AND "projects"."developer_id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ut voluptas iure illo est assumenda repudiandae."], ["description", "Repellat deleniti quia ratione. Error corrupti repudiandae. Reprehenderit quia facere sunt numquam nobis veritatis voluptatum. Nesciunt illum veritatis nisi dicta aspernatur et. Odio illo quisquam."], ["developer_id", 12], ["created_at", "2016-01-04 04:29:41.755400"], ["updated_at", "2016-01-04 04:29:41.755400"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Dolorum culpa est corrupti.' AND "projects"."developer_id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Dolorum culpa est corrupti."], ["description", "Dolores est animi et facilis reprehenderit officiis rerum. Accusantium quia est id temporibus rem facere harum. Nobis sunt corporis nesciunt non voluptatem veritatis. Ipsa natus nihil eum porro sit repellendus et."], ["developer_id", 12], ["created_at", "2016-01-04 04:29:41.758651"], ["updated_at", "2016-01-04 04:29:41.758651"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Consequuntur nostrum.' AND "projects"."developer_id" = 11) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Consequuntur nostrum."], ["description", "Officia ea ipsam perspiciatis provident. Alias nulla est reiciendis nobis illum et quo. Magnam quos eius voluptatibus placeat. Reiciendis doloribus aut quo earum voluptatem occaecati vitae."], ["developer_id", 11], ["created_at", "2016-01-04 04:29:41.761963"], ["updated_at", "2016-01-04 04:29:41.761963"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Sed earum nesciunt excepturi.' AND "projects"."developer_id" = 13) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Sed earum nesciunt excepturi."], ["description", "Quis sequi odit occaecati ullam distinctio voluptate modi. Et molestiae dolorum architecto non corporis. Iste praesentium quisquam. Quasi omnis est nihil et."], ["developer_id", 13], ["created_at", "2016-01-04 04:29:41.764937"], ["updated_at", "2016-01-04 04:29:41.764937"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Ullam blanditiis in dignissimos fugit est.' AND "projects"."developer_id" = 15) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ullam blanditiis in dignissimos fugit est."], ["description", "Repellat magni esse nobis. Modi at neque eius velit corrupti. Dignissimos ipsa ab. Delectus expedita fuga quasi amet. Eum aut molestiae laborum sunt sit."], ["developer_id", 15], ["created_at", "2016-01-04 04:29:41.768247"], ["updated_at", "2016-01-04 04:29:41.768247"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Qui ex perspiciatis quia.' AND "projects"."developer_id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Qui ex perspiciatis quia."], ["description", "Porro saepe labore quas. Voluptate magnam cum qui aut. Ut placeat vel repellendus. Totam est asperiores."], ["developer_id", 12], ["created_at", "2016-01-04 04:29:41.771780"], ["updated_at", "2016-01-04 04:29:41.771780"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Adipisci nihil animi aut corrupti architecto.' AND "projects"."developer_id" = 11) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Adipisci nihil animi aut corrupti architecto."], ["description", "Consequuntur voluptas voluptas numquam ut consequatur dolorem expedita. Magnam saepe corrupti esse occaecati nam aliquam. Minus hic quo recusandae."], ["developer_id", 11], ["created_at", "2016-01-04 04:29:41.775192"], ["updated_at", "2016-01-04 04:29:41.775192"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."name" = 'Iusto eveniet dolores pariatur eaque explicabo qui.' AND "projects"."developer_id" = 14) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "developer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Iusto eveniet dolores pariatur eaque explicabo qui."], ["description", "Laborum et nemo ut inventore consequatur. Repellat perferendis debitis quia qui ea quae nobis. Est quis laudantium aliquid quos inventore quia. Amet id quidem laudantium provident nobis cumque. Molestiae quae vel ad non."], ["developer_id", 14], ["created_at", "2016-01-04 04:29:41.778609"], ["updated_at", "2016-01-04 04:29:41.778609"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "languages" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Doloribus dolorem omnis quasi sed ut."], ["created_at", "2016-01-04 04:29:41.789472"], ["updated_at", "2016-01-04 04:29:41.789472"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "languages" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Possimus ex assumenda provident."], ["created_at", "2016-01-04 04:29:41.791695"], ["updated_at", "2016-01-04 04:29:41.791695"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "languages" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ipsa quae et vero perspiciatis."], ["created_at", "2016-01-04 04:29:41.793808"], ["updated_at", "2016-01-04 04:29:41.793808"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:30:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DevelopersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeveloper Load (0.4ms)[0m  [1mSELECT "developers".* FROM "developers"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 11]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 14]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 15]]
+  Rendered developers/index.html.haml within layouts/application (35.8ms)
+Completed 200 OK in 601ms (Views: 559.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-04 05:30:08 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-04 05:30:08 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-04 05:30:08 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-04 05:30:08 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-04 05:30:09 +0100
+
+
+Started GET "/projects" for ::1 at 2016-01-04 05:30:11 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 22], ["votable_type", "Project"]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 23], ["votable_type", "Project"]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 24], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 25], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 26], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 27], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 28], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 29], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 30], ["votable_type", "Project"]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 31], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 32], ["votable_type", "Project"]]
+  [1m[36mDeveloper Load (0.2ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 33], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 34], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 35], ["votable_type", "Project"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 36], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (47.3ms)
+  Rendered projects/index.html.haml within layouts/application (56.9ms)
+Completed 200 OK in 89ms (Views: 78.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:30:17 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.3ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 11]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 14]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 15]]
+  Rendered developers/index.html.haml within layouts/application (11.5ms)
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/languages" for ::1 at 2016-01-04 05:30:21 +0100
+Processing by LanguagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.3ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 49ms (Views: 40.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/languages/2" for ::1 at 2016-01-04 05:30:25 +0100
+Processing by LanguagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "participation" ON "projects"."id" = "participation"."project_id" WHERE "participation"."language_id" = $1  [["language_id", 2]]
+  Rendered languages/show.html.haml within layouts/application (15.8ms)
+Completed 200 OK in 49ms (Views: 45.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:30:32 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 11]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 14]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 15]]
+  Rendered developers/index.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-04 05:30:34 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 22], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 23], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.1ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 24], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 25], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 26], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 27], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 28], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 29], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 30], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 31], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 32], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.1ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 33], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 34], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 35], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 36], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (39.3ms)
+  Rendered projects/index.html.haml within layouts/application (42.3ms)
+Completed 200 OK in 73ms (Views: 66.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/languages" for ::1 at 2016-01-04 05:30:34 +0100
+Processing by LanguagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/languages/4" for ::1 at 2016-01-04 05:30:36 +0100
+Processing by LanguagesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.6ms)[0m  [1mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "participation" ON "projects"."id" = "participation"."project_id" WHERE "participation"."language_id" = $1  [["language_id", 4]]
+  Rendered languages/show.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/developers" for ::1 at 2016-01-04 05:30:39 +0100
+Processing by DevelopersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeveloper Load (0.3ms)[0m  SELECT "developers".* FROM "developers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 11]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1  [["developer_id", 14]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."developer_id" = $1[0m  [["developer_id", 15]]
+  Rendered developers/index.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects" for ::1 at 2016-01-04 05:30:39 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 22], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.3ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 23], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.1ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 24], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 25], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 26], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 27], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 28], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 29], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 30], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 31], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 32], ["votable_type", "Project"]]
+  [1m[35mDeveloper Load (0.2ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 33], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 34], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 35], ["votable_type", "Project"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "developers".* FROM "developers" WHERE "developers"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 36], ["votable_type", "Project"]]
+  Rendered projects/_project.html.haml (40.5ms)
+  Rendered projects/index.html.haml within layouts/application (43.2ms)
+Completed 200 OK in 69ms (Views: 63.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/languages" for ::1 at 2016-01-04 05:30:40 +0100
+Processing by LanguagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.4ms)
