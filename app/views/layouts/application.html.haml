@@ -9,6 +9,7 @@
   %body
     %header
       %span Rectruitment Task
+      = link_to t('Logout'), destroy_user_session_path, method: :delete
       %ul
         %li= link_to 'Developers', developers_path
         %li= link_to 'Projects', projects_path
