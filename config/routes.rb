@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     # post '/projects' => 'projects#create'
     # get '/projects/new' => 'projects#new'
   end
+  
+  resources :languages, only: [:show, :index]
 
   resources :projects, only: [:index] do
     member do

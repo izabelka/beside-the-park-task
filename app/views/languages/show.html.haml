@@ -1,0 +1,6 @@
+%h1=@language.name
+
+.projects
+  %h2 Projects
+  - @language.projects.each do |project|
+    =project.name

@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :upvote, except: :index
+  before_action :upvote, only: [:upvote, :unvote], except: :index
 
   def index
     @projects = Project.all
@@ -25,12 +25,15 @@ class ProjectsController < ApplicationController
   end
   
   def upvote
+    #@developer = Developer.find(params[:developer_id])
+    #@project = @developer.projects.build(project_params)
     @project = Project.find(params[:id])
     @project.like_by current_user
     redirect_to :back
   end
   
   def unvote
+    #@developer = Developer.find(params[:developer_id])
     @project = Project.find(params[:id])
     @project.dislike_by current_user
     redirect_to :back

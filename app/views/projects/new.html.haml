@@ -3,4 +3,5 @@
 = simple_form_for [@developer, @project] do |f|
   = f.input :name
   = f.input :description
+  = f.association :languages, label_method: :name, value_method: :id, label: 'Languages', as: :check_boxes
   = f.submit :save
