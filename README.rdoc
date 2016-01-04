@@ -1,5 +1,8 @@
 == README
 
+= My solution for Beside The Park Recruitment Task
+As You can see in my commits log, I did most of the tasks. However, something is wrong with voting system: one can upvote project, but can not remove the vote. I added Language Model, but it does not show the projects in the language show page. I did not do the uploading avatars task, neither the extra task. Due to the lack of time, I could not improve the application look.
+
 = Instructions:
 
 1. Clone this repository with: git clone https://gitlab.besidethepark.com/beside-the-park/recruitment-task.git
